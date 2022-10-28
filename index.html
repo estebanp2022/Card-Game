@@ -15,18 +15,22 @@
     <title>War Game</title>
   </head>
   <body>
+    <h2 class="winner">Lets Play!</h2>
     <div class="container">
       <div class="buttons">
         <button class="new-deck-btn">New Deck</button>
         <button class="draw-cards">Draw Cards</button>
         <div class="game-stats">
-          <p>Remaining Cards:</p>
-          <p>Computer Score:</p>
-          <p>Player Score:</p>
+          <p>Remaining Cards: <span class="remaining"></span></p>
+          <p>Computer Score: <span class="computer-score"></span></p>
+          <p>Player Score: <span class="player-score"></span></p>
         </div>
       </div>
-      <div class="cards"></div>
+      <div class="cards">
+        <div class="card-slot"></div>
+        <div class="card-slot"></div>
+      </div>
+      <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
