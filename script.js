@@ -1,5 +1,6 @@
 let newDeckBtn = document.querySelector(".new-deck-btn");
 let drawCards = document.querySelector(".draw-cards");
+let resetBtn = document.querySelector(".reset-btn");
 let header = document.querySelector(".winner");
 let remainingCards = document.querySelector(".remaining");
 let cardsContainer = document.querySelector("cards");
@@ -16,6 +17,20 @@ function handleClick() {
       remainingCards.textContent = data.remaining;
       console.log(data);
       deckId = data.deck_id;
+
+      // reset game functionality
+      computerScore = 0;
+      computerScoreEl.textContent = `${computerScore}`;
+      playerScore = 0;
+      playerScoreEl.textContent = `${playerScore}`;
+
+      drawCards.disabled = false;
+
+      header.textContent = "Lets Play!";
+      document.querySelector(".cards").innerHTML = `
+        <div class="card-slot"></div>
+        <div class="card-slot"></div>
+      `;
     });
 }
 
@@ -37,9 +52,9 @@ function draw2Cards() {
       if (data.remaining === 0) {
         drawCards.disabled = true;
         if (computerScore > playerScore) {
-          header.textContent = "The Computer Won!";
+          header.textContent = "The Computer Won 🥴";
         } else if (playerScore > computerScore) {
-          header.textContent = "You Won!";
+          header.textContent = "You Won 😎";
         } else {
           header.textContent = "Its a tie!";
         }
@@ -47,8 +62,7 @@ function draw2Cards() {
     });
 }
 
-newDeckBtn.addEventListener("click", handleClick); //handleClick is a callback function we created earlier
-
+newDeckBtn.addEventListener("click", handleClick);
 drawCards.addEventListener("click", draw2Cards);
 
 function determineCardWinner(card1, card2) {
