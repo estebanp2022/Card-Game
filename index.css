@@ -60,6 +60,9 @@ button:disabled {
 
 .btns {
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button,
