@@ -31,6 +31,7 @@ body {
 
 .winner {
   margin-top: 40px;
+  margin-bottom: 0;
 }
 
 button:hover {
@@ -95,7 +96,7 @@ img {
   margin-bottom: 40px;
 }
 
-@media (min-width: 38em) {
+@media (min-width: 34em) {
   .btn {
     width: 180px;
     height: 60px;
